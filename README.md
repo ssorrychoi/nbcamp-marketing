@@ -13,6 +13,7 @@ nbcamp-marketing/
 ├── WIL/                        # 주간 회고
 │   └── week01.md
 └── projects/                   # 프로젝트 산출물
+    ├── 00-onboarding/          # Module 0 | 온보딩 산출물
     ├── 01-ad-planning/         # Module 2 | 광고 기획 기초 프로젝트
     ├── 02-content-creation/    # Module 4 | 마케팅 콘텐츠 심화 프로젝트
     ├── 03-data-analysis/       # Module 6 | 마케팅 데이터 분석 프로젝트
