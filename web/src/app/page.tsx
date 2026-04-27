@@ -10,7 +10,7 @@ export default function Home() {
       {/* 프로필 섹션 */}
       <section className="mb-16">
         <div className="space-y-4 mb-8">
-          <h1 className="text-4xl sm:text-5xl font-bold">최대용</h1>
+          <h1 className="text-4xl sm:text-5xl font-bold">최재성</h1>
           <p className="text-xl text-gray-600 dark:text-gray-400">
             KDT 생성형 AI 기반 디지털 마케팅 전문가 양성 과정 수강생
           </p>
@@ -35,10 +35,10 @@ export default function Home() {
             </h3>
             <div className="space-y-2">
               <a
-                href="mailto:zzaesung17@gmail.com"
+                href="mailto:djaeseong.choi@gmail.com"
                 className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline"
               >
-                <span>📧</span> zzaesung17@gmail.com
+                <span>📧</span> djaeseong.choi@gmail.com
               </a>
               <a
                 href="https://github.com/ssorrychoi"
@@ -49,7 +49,7 @@ export default function Home() {
                 <span>🐙</span> GitHub
               </a>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/marketer.yoo.mang.joo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline"
@@ -65,16 +65,51 @@ export default function Home() {
           <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-4">
             경력
           </h3>
-          <div className="space-y-4">
+          <div className="space-y-6">
+            {/* 브레인콜라 */}
+            <div className="border-l-2 border-blue-600 pl-4">
+              <div className="font-semibold">브레인콜라</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Flutter 모바일 앱 개발자 | 2019.12 - 2021.05</div>
+              <ul className="text-sm text-gray-700 dark:text-gray-300 mt-2 ml-4 list-disc space-y-1">
+                <li>"책방잉크" 앱 유지, 보수, 운영</li>
+                <li>"myfam.ai for 조아라" 앱 유지, 보수, 운영</li>
+              </ul>
+            </div>
+
+            {/* (주)스프린트 */}
+            <div className="border-l-2 border-blue-600 pl-4">
+              <div className="font-semibold">(주)스프린트</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Flutter 모바일 앱 개발자 | 2021.06 - 2025.12</div>
+              <div className="text-sm text-gray-700 dark:text-gray-300 mt-3">
+                <div className="font-medium mb-2">1. 스프린트앱(회원용) 출시 및 기능 개발 (2022.01 - 2025.12)</div>
+                <ul className="ml-4 list-disc space-y-1">
+                  <li>기존 개발 앱을 인앱결제 적용 버전으로 리빌드</li>
+                  <li>GetX, Health Connect, Apple Health 연동</li>
+                  <li>바코드 공공데이터 API 연동 음식 정보 기능 개발</li>
+                </ul>
+              </div>
+              <div className="text-sm text-gray-700 dark:text-gray-300 mt-3">
+                <div className="font-medium mb-2">2. 스프린트 코치용앱 출시 및 기능 개발 (2025.04 - 2025.12)</div>
+                <ul className="ml-4 list-disc space-y-1">
+                  <li>회원용앱 Component 재사용하여 monorepo 적용</li>
+                  <li>Riverpod, Go Router를 사용한 상태 관리 및 라우팅</li>
+                  <li>ChatGPT, Claude, Gemini 모델 연동으로 AI 기반 식단 피드백 기능 개발</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* KDT 과정 */}
             <div className="border-l-2 border-blue-600 pl-4">
               <div className="font-semibold">KDT 생성형 AI 기반 디지털 마케팅 과정</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">2026.04 - 2026.09</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">2026.04.20 - 2026.09.14</div>
               <div className="text-sm text-gray-700 dark:text-gray-300 mt-1">
                 마케팅 기초 이론부터 데이터 분석, AI 활용까지 종합적으로 학습
               </div>
             </div>
           </div>
         </div>
+
+
       </section>
 
       {/* 최근 TIL */}
