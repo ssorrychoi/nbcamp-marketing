@@ -37,5 +37,5 @@ projects/
 
 ## Git 설정
 
-- 사용자: ssorrychoi / zzaesung17@gmail.com
+- 사용자: ssorrychoi / djaeseong.choi@gmail.com
 - 기본 브랜치: main

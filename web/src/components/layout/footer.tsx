@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="text-sm text-gray-600 dark:text-gray-400">
-            © {currentYear} 최대용. All rights reserved.
+            © {currentYear} 최재성. All rights reserved.
           </div>
           <div className="flex gap-4">
             <a

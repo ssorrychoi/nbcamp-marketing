@@ -67,7 +67,7 @@ export default function Home() {
           </h3>
           <div className="space-y-6">
             {/* 브레인콜라 */}
-            <div className="border-l-2 border-blue-600 pl-4">
+            <div className="border-l-2 border-red-600 pl-4">
               <div className="font-semibold">브레인콜라</div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Flutter 모바일 앱 개발자 | 2019.12 - 2021.05</div>
               <ul className="text-sm text-gray-700 dark:text-gray-300 mt-2 ml-4 list-disc space-y-1">
@@ -77,7 +77,7 @@ export default function Home() {
             </div>
 
             {/* (주)스프린트 */}
-            <div className="border-l-2 border-blue-600 pl-4">
+            <div className="border-l-2 border-red-600 pl-4">
               <div className="font-semibold">(주)스프린트</div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Flutter 모바일 앱 개발자 | 2021.06 - 2025.12</div>
               <div className="text-sm text-gray-700 dark:text-gray-300 mt-3">

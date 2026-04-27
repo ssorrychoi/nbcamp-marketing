@@ -12,10 +12,10 @@ const notoSansKr = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  title: "포트폴리오 - 최대용",
+  title: "포트폴리오 - 최재성",
   description: "KDT 생성형 AI 기반 디지털 마케팅 전문가 양성 과정 학습 기록",
   openGraph: {
-    title: "포트폴리오 - 최대용",
+    title: "포트폴리오 - 최재성",
     description: "KDT 생성형 AI 기반 디지털 마케팅 전문가 양성 과정 학습 기록",
     type: "website",
   },
