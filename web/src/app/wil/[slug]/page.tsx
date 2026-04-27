@@ -13,9 +13,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const wil = getWilBySlug(params.slug);
+  const { slug } = await params;
+  const wil = getWilBySlug(slug);
   if (!wil) {
     return {
       title: "Not Found",
@@ -28,12 +29,13 @@ export async function generateMetadata({
   };
 }
 
-export default function WilDetailPage({
+export default async function WilDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const wil = getWilBySlug(params.slug);
+  const { slug } = await params;
+  const wil = getWilBySlug(slug);
 
   if (!wil) {
     notFound();

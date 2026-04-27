@@ -14,9 +14,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const til = getTilBySlug(params.slug);
+  const { slug } = await params;
+  const til = getTilBySlug(slug);
   if (!til) {
     return {
       title: "Not Found",
@@ -29,12 +30,13 @@ export async function generateMetadata({
   };
 }
 
-export default function TilDetailPage({
+export default async function TilDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const til = getTilBySlug(params.slug);
+  const { slug } = await params;
+  const til = getTilBySlug(slug);
 
   if (!til) {
     notFound();
