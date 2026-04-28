@@ -30,6 +30,16 @@ export default function Header() {
               TIL
             </Link>
             <Link
+              href="/notes/"
+              className={`text-sm font-medium transition-colors ${
+                isActive("/notes")
+                  ? "text-blue-600 dark:text-blue-400 font-semibold"
+                  : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+              }`}
+            >
+              강의노트
+            </Link>
+            <Link
               href="/wil/"
               className={`text-sm font-medium transition-colors ${
                 isActive("/wil")
