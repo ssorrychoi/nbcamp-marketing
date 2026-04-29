@@ -38,11 +38,12 @@ export default function NotesPage() {
 
           <div className="space-y-3">
             {notesByFolder[folder].map((note) => {
-              const [, noteSlug] = note.slug.split("/");
+              const [, ...slugParts] = note.slug.split("/");
+              const encodedSlug = slugParts.map(encodeURIComponent).join("/");
               return (
                 <Link
                   key={note.slug}
-                  href={`/notes/${encodeURIComponent(note.folder)}/${encodeURIComponent(noteSlug)}/`}
+                  href={`/notes/${encodeURIComponent(note.folder)}/${encodedSlug}/`}
                   className="block p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-md transition-all"
                 >
                   <div className="font-semibold text-gray-900 dark:text-white mb-2">

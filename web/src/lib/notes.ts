@@ -51,6 +51,44 @@ function extractExcerpt(content: string, maxLength: number = 150): string {
   return excerptText;
 }
 
+function collectNotesRecursively(
+  dirPath: string,
+  topFolder: string,
+  relativePath: string = ""
+): NoteMeta[] {
+  const notes: NoteMeta[] = [];
+
+  if (!fs.existsSync(dirPath)) {
+    return notes;
+  }
+
+  const items = fs.readdirSync(dirPath);
+
+  for (const item of items) {
+    const itemPath = path.join(dirPath, item);
+    const stat = fs.statSync(itemPath);
+
+    if (stat.isDirectory()) {
+      const subPath = relativePath ? `${relativePath}/${item}` : item;
+      notes.push(...collectNotesRecursively(itemPath, topFolder, subPath));
+    } else if (item.endsWith(".md")) {
+      const filename = item.replace(".md", "");
+      const slug = relativePath ? `${relativePath}/${filename}` : filename;
+      const content = fs.readFileSync(itemPath, "utf-8");
+      const { data } = matter(content);
+
+      notes.push({
+        slug: `${topFolder}/${slug}`,
+        folder: topFolder,
+        title: data.title || slug,
+        excerpt: extractExcerpt(content),
+      });
+    }
+  }
+
+  return notes;
+}
+
 export function getAllNotesMeta(): NoteMeta[] {
   const notesDir = getNotesDirPath();
   const notes: NoteMeta[] = [];
@@ -67,23 +105,7 @@ export function getAllNotesMeta(): NoteMeta[] {
 
     if (!stat.isDirectory()) continue;
 
-    const files = fs.readdirSync(folderPath);
-
-    for (const file of files) {
-      if (file.endsWith(".md")) {
-        const filePath = path.join(folderPath, file);
-        const content = fs.readFileSync(filePath, "utf-8");
-        const slug = file.replace(".md", "");
-        const { data } = matter(content);
-
-        notes.push({
-          slug: `${folder}/${slug}`,
-          folder,
-          title: data.title || slug,
-          excerpt: extractExcerpt(content),
-        });
-      }
-    }
+    notes.push(...collectNotesRecursively(folderPath, folder));
   }
 
   return notes;

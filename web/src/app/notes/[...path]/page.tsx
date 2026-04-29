@@ -4,24 +4,34 @@ import { Badge } from "@/components/ui/badge";
 import { MarkdownRenderer } from "@/components/markdown/markdown-renderer";
 
 export async function generateStaticParams() {
-  const notes = getAllNotesMeta();
-  return notes.map((note) => {
-    const [folder, slug] = note.slug.split('/');
-    return { folder, slug };
-  });
+  try {
+    const notes = getAllNotesMeta();
+    const params = notes.map((note) => {
+      const parts = note.slug.split("/");
+      const encodedParts = parts.map(part => encodeURIComponent(part));
+      return { path: encodedParts };
+    });
+    console.log(`[generateStaticParams] Generated ${params.length} params for notes`);
+    return params;
+  } catch (error) {
+    console.error("[generateStaticParams] Error:", error);
+    return [];
+  }
 }
 
 interface Props {
   params: Promise<{
-    folder: string;
-    slug: string;
+    path: string[];
   }>;
 }
 
 export default async function NoteDetailPage({ params }: Props) {
   const resolvedParams = await params;
-  const folder = decodeURIComponent(resolvedParams.folder);
-  const slug = decodeURIComponent(resolvedParams.slug);
+  const path = resolvedParams.path.map(decodeURIComponent);
+
+  const folder = path[0];
+  const slug = path.slice(1).join("/");
+
   const note = getNoteBySlug(folder, slug);
 
   if (!note) {
@@ -36,7 +46,7 @@ export default async function NoteDetailPage({ params }: Props) {
           <Badge variant="outline">{getFolderDisplayName(note.folder)}</Badge>
         </div>
       </header>
-      
+
       <div className="mb-16">
         <MarkdownRenderer content={note.content} />
       </div>
