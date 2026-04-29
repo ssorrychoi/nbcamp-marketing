@@ -1,3 +1,6 @@
+---
+title: 광고 기획의 구조와 역할
+---
 
 # 📈 광고 기획의 구조와 역할 (Advertising Strategy & Process)
 

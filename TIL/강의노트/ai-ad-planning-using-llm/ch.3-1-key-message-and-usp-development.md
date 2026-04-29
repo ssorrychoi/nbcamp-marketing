@@ -1,3 +1,7 @@
+---
+title: 핵심 메시지 도출과 USP 개발
+---
+
 # 📢 [핵심 요약] 핵심 메시지 도출과 USP 개발 (Core Message & USP Development)
 
 > **💡 USP(Unique Selling Proposition)란?**

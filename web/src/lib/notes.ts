@@ -66,11 +66,12 @@ export function getAllNotesMeta(): NoteMeta[] {
         const filePath = path.join(folderPath, file);
         const content = fs.readFileSync(filePath, "utf-8");
         const slug = file.replace(".md", "");
+        const { data } = matter(content);
 
         notes.push({
           slug: `${folder}/${slug}`,
           folder,
-          title: slug,
+          title: data.title || slug,
           excerpt: extractExcerpt(content),
         });
       }

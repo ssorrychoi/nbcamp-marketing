@@ -1,3 +1,7 @@
+---
+title: 페르소나와 고객 여정 맵 작성
+---
+
 # 👤 [핵심 요약] 페르소나와 고객 여정 맵 작성 (Persona & Customer Journey Map)
 
 > *"If you design for everyone, you design for no one." - Alan Cooper*

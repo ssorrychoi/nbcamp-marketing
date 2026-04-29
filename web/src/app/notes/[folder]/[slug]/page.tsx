@@ -6,9 +6,10 @@ import { MarkdownRenderer } from "@/components/markdown/markdown-renderer";
 export async function generateStaticParams() {
   const notes = getAllNotesMeta();
   return notes.map((note) => {
+    const [folder, slug] = note.slug.split('/');
     return {
-      folder: encodeURIComponent(note.folder),
-      slug: encodeURIComponent(note.title),
+      folder: encodeURIComponent(folder),
+      slug: encodeURIComponent(slug),
     };
   });
 }

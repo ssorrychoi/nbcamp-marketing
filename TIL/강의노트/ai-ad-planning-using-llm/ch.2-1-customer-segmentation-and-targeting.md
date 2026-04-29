@@ -1,3 +1,7 @@
+---
+title: 고객 세분화와 타겟분석
+---
+
 # 🎯 [핵심 요약] 고객 세분화와 타겟 분석 (Customer Segmentation & Target Analysis)
 
 > *"모든 사람에게 말하면, 아무에게도 닿지 않는다." - 데이비드 오길비*

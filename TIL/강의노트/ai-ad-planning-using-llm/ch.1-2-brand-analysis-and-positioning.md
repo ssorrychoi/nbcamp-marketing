@@ -1,3 +1,7 @@
+---
+title: 브랜드 분석과 포지셔닝
+---
+
 # 🎯 [핵심 요약] 브랜드 분석과 포지셔닝 (Brand Analysis & Positioning)
 
 > **💡 브랜드란?**

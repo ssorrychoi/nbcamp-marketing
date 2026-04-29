@@ -1,3 +1,7 @@
+---
+title: 성과 측정과 KPI 설정
+---
+
 # 📊 [핵심 요약] 성과 측정과 KPI 설정 (Performance Measurement & KPI Setting)
 
 > **💡 퍼포먼스 마케팅의 본질**

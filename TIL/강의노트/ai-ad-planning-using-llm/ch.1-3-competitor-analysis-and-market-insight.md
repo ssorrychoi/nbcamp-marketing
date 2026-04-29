@@ -1,3 +1,7 @@
+---
+title: 경쟁사 분석과 시장 인사이트
+---
+
 # 🔍 [핵심 요약] 경쟁사 분석과 시장 인사이트 (Competitor Analysis & Market Insight)
 
 > **💡 경쟁사 분석의 핵심**
