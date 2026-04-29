@@ -1,4 +1,4 @@
-import { getNoteBySlug, getAllNotesMeta } from "@/lib/notes";
+import { getNoteBySlug, getAllNotesMeta, getFolderDisplayName } from "@/lib/notes";
 import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { MarkdownRenderer } from "@/components/markdown/markdown-renderer";
@@ -7,10 +7,7 @@ export async function generateStaticParams() {
   const notes = getAllNotesMeta();
   return notes.map((note) => {
     const [folder, slug] = note.slug.split('/');
-    return {
-      folder: encodeURIComponent(folder),
-      slug: encodeURIComponent(slug),
-    };
+    return { folder, slug };
   });
 }
 
@@ -36,7 +33,7 @@ export default async function NoteDetailPage({ params }: Props) {
       <header className="mb-10">
         <h1 className="text-4xl font-bold mb-4">{note.title}</h1>
         <div className="flex gap-2">
-          <Badge variant="outline">{note.folder}</Badge>
+          <Badge variant="outline">{getFolderDisplayName(note.folder)}</Badge>
         </div>
       </header>
       

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getAllNotesMeta } from "@/lib/notes";
+import { getAllNotesMeta, getFolderDisplayName } from "@/lib/notes";
 
 export const metadata = {
   title: "강의노트 - 포트폴리오",
@@ -33,26 +33,29 @@ export default function NotesPage() {
       {folders.map((folder) => (
         <section key={folder} className="mb-12">
           <h2 className="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-400">
-            {folder}
+            {getFolderDisplayName(folder)}
           </h2>
 
           <div className="space-y-3">
-            {notesByFolder[folder].map((note) => (
-              <Link
-                key={note.slug}
-                href={`/notes/${encodeURIComponent(note.folder)}/${encodeURIComponent(note.title)}/`}
-                className="block p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-md transition-all"
-              >
-                <div className="font-semibold text-gray-900 dark:text-white mb-2">
-                  {note.title}
-                </div>
+            {notesByFolder[folder].map((note) => {
+              const [, noteSlug] = note.slug.split("/");
+              return (
+                <Link
+                  key={note.slug}
+                  href={`/notes/${encodeURIComponent(note.folder)}/${encodeURIComponent(noteSlug)}/`}
+                  className="block p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-md transition-all"
+                >
+                  <div className="font-semibold text-gray-900 dark:text-white mb-2">
+                    {note.title}
+                  </div>
                 {note.excerpt && (
                   <p className="text-sm text-gray-600 dark:text-gray-400">
                     {note.excerpt}
                   </p>
                 )}
               </Link>
-            ))}
+            );
+          })}
           </div>
         </section>
       ))}

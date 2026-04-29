@@ -2,6 +2,14 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
+export const FOLDER_DISPLAY_NAMES: Record<string, string> = {
+  "ai-ad-planning-using-llm": "AI를 활용한 광고 기획법",
+};
+
+export function getFolderDisplayName(folder: string): string {
+  return FOLDER_DISPLAY_NAMES[folder] ?? folder;
+}
+
 export interface NoteMeta {
   slug: string;
   folder: string;
