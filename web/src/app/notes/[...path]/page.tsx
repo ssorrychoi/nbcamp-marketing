@@ -8,8 +8,7 @@ export async function generateStaticParams() {
     const notes = getAllNotesMeta();
     const params = notes.map((note) => {
       const parts = note.slug.split("/");
-      const encodedParts = parts.map(part => encodeURIComponent(part));
-      return { path: encodedParts };
+      return { path: parts };
     });
     console.log(`[generateStaticParams] Generated ${params.length} params for notes`);
     return params;
@@ -27,7 +26,7 @@ interface Props {
 
 export default async function NoteDetailPage({ params }: Props) {
   const resolvedParams = await params;
-  const path = resolvedParams.path.map(decodeURIComponent);
+  const path = resolvedParams.path;
 
   const folder = path[0];
   const slug = path.slice(1).join("/");
